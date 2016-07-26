@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 gem 'rails', '4.2.5'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -15,7 +14,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'gibbon'
 gem 'high_voltage'
@@ -27,6 +26,8 @@ group :development do
   gem 'spring-commands-rspec'
 end
 group :development, :test do
+  gem 'sqlite3'
+  gem 'pry'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
@@ -37,3 +38,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+group :production do 
+  gem 'pg'
+  gem 'rails_12factor'

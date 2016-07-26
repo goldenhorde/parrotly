@@ -1,13 +1,19 @@
-<h3>Welcome</h3>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
     <h3>Admin</h3>
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
   <% else %>
-    <h3>You've signed up. Download a free book.</h3>
-    <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %>
+    <center><h3>Thank you for signing up to Parrot.ly! Download a free e-book to start your language learning journey.</h3></center>
+    <center><%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %></center>
   <% end %>
 <% else %>
-  <h3>Sign up and download a free book.</h3>
-  <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-large' %>
+
+<div class="jumbotron">
+  <center><h1>Parrot.ly</h1></center>
+     <center><h3>Sign up and download your first free language learning tutorial PDF!</h3> </center>
+
+  <p></p>
+ <center> <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-lg' %> </center>
+</div>
+
 <% end %>
